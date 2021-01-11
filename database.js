@@ -5,7 +5,10 @@ Set up mongoose connection...
  */
 function setUpMongooseConnection() {
   const connectionString = process.env.MONGODB_URI;
-  console.log(connectionString);
+  if (!connectionString) {
+    throw new Error('Connection string is not defined. ' +
+        'Set process.env.MONGODB_URI');
+  }
   mongoose.connect(connectionString,
       {useNewUrlParser: true, useUnifiedTopology: true});
   mongoose.Promise = global.Promise;

@@ -3,10 +3,14 @@ const express = require('express');
 const router = express.Router();
 
 // Require our controllers.
-const standardCardController = require('../controllers/standardCardController');
+const standardCardController =
+    require('../controllers/standard-card-controller');
 
-// GET request for creating a StandardCard.
-// NOTE This must come before route that displays StandardCard (uses id).
+// GET request for list of all StandardCard.
+router.get('/all',
+    standardCardController.standardCardList);
+
+// GET request for creating a StandardCard
 router.get('/create',
     standardCardController.standardCardCreationForm);
 
@@ -33,10 +37,6 @@ router.post('/:id/update',
 // GET request for one StandardCard.
 router.get('/:id',
     standardCardController.standardCardDetail);
-
-// GET request for list of all StandardCard.
-router.get('/all',
-    standardCardController.standardCardList);
 
 
 module.exports = router;

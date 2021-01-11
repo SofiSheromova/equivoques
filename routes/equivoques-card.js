@@ -4,7 +4,11 @@ const router = express.Router();
 
 // Require our controllers.
 const equivoquesCardController =
-    require('../controllers/equivoquesCardController');
+    require('../controllers/equivoques-card-controller');
+
+// GET request for list of all EquivoquesCard.
+router.get('/all',
+    equivoquesCardController.equivoquesCardList);
 
 // GET request for creating a EquivoquesCard.
 router.get('/create',
@@ -33,10 +37,6 @@ router.post('/:id/update',
 // GET request for one EquivoquesCard.
 router.get('/:id',
     equivoquesCardController.equivoquesCardDetail);
-
-// GET request for list of all EquivoquesCard.
-router.get('/equivoquescards',
-    equivoquesCardController.equivoquesCardList);
 
 
 module.exports = router;

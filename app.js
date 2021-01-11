@@ -2,6 +2,7 @@ const createError = require('http-errors');
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -10,13 +11,17 @@ const usersRouter = require('./routes/users');
 const themeRouter = require('./routes/theme');
 const categoryRouter = require('./routes/category');
 const taskRouter = require('./routes/task');
-const standardCardRouter = require('./routes/standardCard');
-const equivoquesCardRouter = require('./routes/equivoquesCard');
+const standardCardRouter = require('./routes/standard-card');
+const equivoquesCardRouter = require('./routes/equivoques-card');
 
 const app = express();
 
 const setUpMongooseConnection = require('./database');
-setUpMongooseConnection();
+try {
+  setUpMongooseConnection();
+} catch (err) {
+  console.error(err.message);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +31,8 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));

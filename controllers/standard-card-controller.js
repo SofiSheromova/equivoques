@@ -1,4 +1,4 @@
-const StandardCard = require('../models/standardCard');
+const StandardCard = require('../models/standard-card');
 
 // Display list of all StandardCards.
 exports.standardCardList = function(req, res) {

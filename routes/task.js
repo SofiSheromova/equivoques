@@ -3,10 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 // Require our controllers.
-const taskController = require('../controllers/taskController');
+const taskController = require('../controllers/task-controller');
+
+// GET request for list of all Task.
+router.get('/all',
+    taskController.taskList);
 
 // GET request for creating a Task.
-// NOTE This must come before route that displays Task (uses id).
 router.get('/create',
     taskController.taskCreationForm);
 
@@ -33,10 +36,6 @@ router.post('/:id/update',
 // GET request for one Task.
 router.get('/:id',
     taskController.taskDetail);
-
-// GET request for list of all Task.
-router.get('/all',
-    taskController.taskList);
 
 
 module.exports = router;

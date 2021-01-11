@@ -3,10 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 // Require our controllers.
-const themeController = require('../controllers/themeController');
+const themeController = require('../controllers/theme-controller');
+
+// GET request for list of all Theme.
+router.get('/all',
+    themeController.themeList);
 
 // GET request for creating a Theme.
-// NOTE This must come before route that displays Theme (uses id).
 router.get('/create',
     themeController.themeCreationForm);
 
@@ -33,10 +36,5 @@ router.post('/:id/update',
 // GET request for one Theme.
 router.get('/:id',
     themeController.themeDetail);
-
-// GET request for list of all Theme.
-router.get('/all',
-    themeController.themeList);
-
 
 module.exports = router;

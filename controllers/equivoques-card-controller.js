@@ -1,4 +1,4 @@
-const EquivoquesCard = require('../models/equivoquesCard');
+const EquivoquesCard = require('../models/equivoques-card');
 
 // Display list of all EquivoquesCards.
 exports.equivoquesCardList = function(req, res) {

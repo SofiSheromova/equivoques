@@ -3,10 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 // Require our controllers.
-const categoryController = require('../controllers/categoryController');
+const categoryController = require('../controllers/category-controller');
+
+// GET request for list of all Category.
+router.get('/all',
+    categoryController.categoryList);
 
 // GET request for creating a Category.
-// NOTE This must come before route that displays Category (uses id).
 router.get('/create',
     categoryController.categoryCreationForm);
 
@@ -33,10 +36,6 @@ router.post('/:id/update',
 // GET request for one Category.
 router.get('/:id',
     categoryController.categoryDetail);
-
-// GET request for list of all Category.
-router.get('/all',
-    categoryController.categoryList);
 
 
 module.exports = router;

@@ -10,8 +10,8 @@ const async = require('async');
 const Theme = require('./models/theme');
 const Category = require('./models/category');
 const Task = require('./models/task');
-const StandardCard = require('./models/standardCard');
-const EquivoquesCard = require('./models/equivoquesCard');
+const StandardCard = require('./models/standard-card');
+const EquivoquesCard = require('./models/equivoques-card');
 
 const setUpMongooseConnection = require('./database');
 setUpMongooseConnection();
