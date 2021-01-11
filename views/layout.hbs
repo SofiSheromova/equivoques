@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ru">
+<head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+</head>
+<body>
+{{> navbar }}
+<div class="content">
     {{{body}}}
-  </body>
+</div>
+</body>
 </html>

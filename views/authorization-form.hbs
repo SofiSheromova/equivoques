@@ -1,0 +1,25 @@
+<!--<script type="text/javascript"-->
+<!--        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.js">-->
+<!--</script>-->
+
+<form id="authorization-form" class="authorization-form">
+    <div class="row">
+        <div class="input-field controls">
+            <label for="userName">Имя</label>
+            <input type="text" id="userName" name="userName" class="validate" required placeholder="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="controls">
+            <label for="userBirthday">День рождения</label>
+            <input type="date" id="userBirthday" name="userBirthday" class="datepicker validate" required />
+        </div>
+    </div>
+    <div class="row center">
+        <div class="input-field">
+            <button class="btn" type="submit" name="action">
+                Вход <i class="material-icons right">person</i>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,8 +1,15 @@
 const Theme = require('../models/theme');
 
 // Display list of all Themes.
-exports.themeList = function(req, res) {
-  res.send('NOT IMPLEMENTED: Theme list');
+exports.themeList = function(req, res, next) {
+  Theme.find()
+      .exec(function(err, listThemes) {
+        if (err) {
+          return next(err);
+        }
+        // Successful, so render.
+        res.render('theme-list', {title: 'Theme List', themes: listThemes});
+      });
 };
 
 // Display detail page for a specific Theme.

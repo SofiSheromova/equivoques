@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-a {
-  color: #00B7FF;
+.content {
+    padding: 20px 30px;
+}
+
+.standard-title {
+    text-transform: uppercase;
+}
+
+.standard-description {
+    display: inline-block;
+}
+
+.standard-description::first-letter {
+    text-transform: lowercase;
+}
+
+.authorization-form {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
 }
