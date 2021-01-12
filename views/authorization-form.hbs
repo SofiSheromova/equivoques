@@ -1,18 +1,16 @@
-<!--<script type="text/javascript"-->
-<!--        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.js">-->
-<!--</script>-->
+<script src="/javascripts/form-validation.js"></script>
 
-<form id="authorization-form" class="authorization-form">
+<form id="authorization-form" method="post">
     <div class="row">
         <div class="input-field controls">
             <label for="userName">Имя</label>
-            <input type="text" id="userName" name="userName" class="validate" required placeholder="">
+            <input type="text" id="userName" name="userName" minlength="3" class="validate" required placeholder="">
         </div>
     </div>
     <div class="row">
         <div class="controls">
             <label for="userBirthday">День рождения</label>
-            <input type="date" id="userBirthday" name="userBirthday" class="datepicker validate" required />
+            <input type="date" id="userBirthday" name="userBirthday"  class="validate" required />
         </div>
     </div>
     <div class="row center">

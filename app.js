@@ -17,11 +17,7 @@ const equivoquesCardRouter = require('./routes/equivoques-card');
 const app = express();
 
 const setUpMongooseConnection = require('./database');
-try {
-  setUpMongooseConnection();
-} catch (err) {
-  console.error(err.message);
-}
+setUpMongooseConnection();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,8 +25,8 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
