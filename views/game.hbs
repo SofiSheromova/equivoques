@@ -1,11 +1,15 @@
+<script type="text/javascript" src="/javascripts/dice-hooks.js"></script>
+<link rel="stylesheet" href="/stylesheets/dice.css">
+<link rel="stylesheet" href="/stylesheets/timer.css">
+
 <h4 class="sandy-brown-text text-darken-1 center">Игра началась!</h4>
 <ol class="game-description">
     <li>Бросай кубик, чтобы получить карту</li>
+    <li>Запускай таймер</li>
     <li>Объясняй слова так, чтобы поняла твоя команда</li>
     <li>Наслаждайся результатом</li>
 </ol>
-<script type="text/javascript" src="/javascripts/dice-hooks.js"></script>
-<link rel="stylesheet" href="/stylesheets/dice.css">
+
 <div class="game-wrapper">
     <div class="dice-wrapper">
         <div class="dice">
@@ -48,7 +52,68 @@
         </div>
         <script src="/javascripts/dice.js"></script>
     </div>
-    <div class="card-wrapper ">
-
+    <div class="timer-wrapper">
+        <i class="material-icons play-timer cadet-blue-text text-lighten-1">play_arrow</i>
+        <div class="base-timer">
+            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="base-timer__circle">
+                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                    <path
+                            id="base-timer-path-remaining"
+                            class="cadet-blue-text text-lighten-1"
+                            stroke-dasharray="283"
+                            d="
+                                M 50, 50
+                                m -45, 0
+                                a 45,45 0 1,0 90,0
+                                a 45,45 0 1,0 -90,0
+                            "
+                    ></path>
+                </g>
+            </svg>
+            <span id="base-timer-label" class="base-timer__label"></span>
+        </div>
+        <script src="/javascripts/timer.js"></script>
+    </div>
+    <div class="card-wrapper">
+        <div class="standard-card">
+            <p class="theme__task">Тема</p>
+            <div class="standard-task" data-point="1">
+                <div class="category__standard-task">
+                    <img class="dice-img__standard-task" src="/images/dice/dice-1.png" alt="1"/>
+                    <span>слова</span>
+                </div>
+                <span class="content__standard-task">Загадка 1</span>
+            </div>
+            <div class="standard-task" data-point="2">
+                <div class="category__standard-task">
+                    <img class="dice-img__standard-task" src="/images/dice/dice-2.png" alt="2"/>
+                    <span>наоборот</span>
+                </div>
+                <span class="content__standard-task">Какая-то очень длинная загадка, которая не влезает в строку</span>
+            </div>
+            <div class="standard-task" data-point="3">
+                <div class="category__standard-task">
+                    <img class="dice-img__standard-task" src="/images/dice/dice-3.png" alt="3"/>
+                    <span>рисунок</span>
+                </div>
+                <span class="content__standard-task">Следующая загадка</span>
+            </div>
+            <div class="standard-task" data-point="4">
+                <div class="category__standard-task">
+                    <img class="dice-img__standard-task" src="/images/dice/dice-4.png" alt="4"/>
+                    <span>жесты</span>
+                </div>
+                <span class="content__standard-task">Следующая загадка</span>
+            </div>
+            <div class="standard-task" data-point="5">
+                <div class="category__standard-task">
+                    <img class="dice-img__standard-task" src="/images/dice/dice-5.png" alt="5"/>
+                    <span>да/нет</span>
+                </div>
+                <span class="content__standard-task">Следующая загадка</span>
+            </div>
+        </div>
+        <div class="equivoques-card" hidden></div>
     </div>
 </div>
