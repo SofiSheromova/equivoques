@@ -29,5 +29,5 @@ exports.gamePage = function(req, res, next) {
     res.redirect('/authorization?referer=/game');
     return;
   }
-  res.render('game-start', {title: 'Игра'});
+  res.render('game', {title: 'Игра'});
 };

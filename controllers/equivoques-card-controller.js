@@ -1,4 +1,5 @@
 const EquivoquesCard = require('../models/equivoques-card');
+const cardController = require('./card-controller');
 
 // Display list of all EquivoquesCards.
 exports.equivoquesCardList = function(req, res) {
@@ -38,4 +39,8 @@ exports.equivoquesCardUpdateForm = function(req, res) {
 // Handle EquivoquesCard update on POST.
 exports.equivoquesCardUpdate = function(req, res) {
   res.send('NOT IMPLEMENTED: EquivoquesCard update POST');
+};
+
+exports.equivoquesCardRandom = function(req, res) {
+  cardController.cardRandom(EquivoquesCard, req, res);
 };

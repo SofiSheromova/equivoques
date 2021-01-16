@@ -1,4 +1,5 @@
 const StandardCard = require('../models/standard-card');
+const cardController = require('./card-controller');
 
 // Display list of all StandardCards.
 exports.standardCardList = function(req, res) {
@@ -38,4 +39,8 @@ exports.standardCardUpdateForm = function(req, res) {
 // Handle StandardCard update on POST.
 exports.standardCardUpdate = function(req, res) {
   res.send('NOT IMPLEMENTED: StandardCard update POST');
+};
+
+exports.standardCardRandom = function(req, res) {
+  cardController.cardRandom(StandardCard, req, res);
 };

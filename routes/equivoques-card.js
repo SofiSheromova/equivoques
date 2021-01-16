@@ -38,5 +38,7 @@ router.post('/:id/update',
 router.get('/:id',
     equivoquesCardController.equivoquesCardDetail);
 
+router.get('/',
+    equivoquesCardController.equivoquesCardRandom);
 
 module.exports = router;

@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    margin: 10px 50px;
+}
+
+.standard-title {
+    text-transform: uppercase;
+}
+
+.standard-description {
+    display: inline-block;
+}
+
+.standard-description::first-letter {
+    text-transform: lowercase;
+}
+
+#authorization-form {
+    width: 100%;
+    max-width: 450px;
+    margin: 25vh auto;
+}
+
+.game-description {
+    display: inline-block;
+    font-size: 1.25rem;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-evenly;
+    justify-content: space-around;
+}
+
+.card-wrapper {
+    width: 400px;
+    height: 300px;
+    background-color: #b2e4ff;
+    border: 5px dashed #00b0ff;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content {
+        margin: 10px 50px;
+    }
+    .game-description {
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+        margin: 10px 75px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .content {
+        margin: 20px 100px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content {
+        margin: 20px 125px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content {
+        margin: 20px 150px;
+    }
+}

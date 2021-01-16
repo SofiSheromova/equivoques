@@ -1,17 +1,4 @@
 /* eslint-disable require-jsdoc*/
-function rollDice() {
-  const dice = [...document.querySelectorAll('.die-list')];
-  dice.forEach((die) => {
-    toggleClasses(die);
-    die.dataset.roll = getRandomNumber(1, 6);
-  });
-}
-
-function toggleClasses(die) {
-  die.classList.toggle('odd-roll');
-  die.classList.toggle('even-roll');
-}
-
 function getRandomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -19,15 +6,36 @@ function getRandomNumber(min, max) {
 }
 
 $(document).ready(function() {
-  let clicked = false;
-  $('#roll-button').click(rollDice);
-  $('.die-item').click(function() {
-    if (!clicked) {
-      clicked = true;
+  let diceClicked = false;
+  $('.die-item').click(rollDice);
+
+  function rollDice() {
+    if (!diceClicked) {
+      diceClicked = true;
       $('.die-item[data-side="1"]')
           .empty()
           .append($('<span class="dot"></span>'));
     }
-    rollDice();
-  });
+    const diceValue = updateDiceValue();
+    console.log(diceValue);
+    let url;
+    if (diceValue === '6') {
+      url = '/equivoquescard/';
+    } else {
+      url = '/standardcard/';
+    }
+    fetch(url)
+        .then((res) => res.json())
+        .then(console.log)
+        .catch(console.log);
+  }
+
+  function updateDiceValue() {
+    const dice = $('.die-list')
+        .toggleClass('odd-roll')
+        .toggleClass('even-roll')
+        .attr('data-roll', getRandomNumber(1, 6));
+
+    return dice.attr('data-roll');
+  }
 });
