@@ -20,7 +20,7 @@ const CategorySchema = new Schema({
     required: true,
     default: new Date(60 * 1000),
     set: (minutes) => new Date(minutes * 60 * 1000),
-    get: (time) => time.getMinutes(),
+    get: (time) => time.getTime() / 1000,
   },
   points: {
     type: Number,
@@ -30,6 +30,8 @@ const CategorySchema = new Schema({
     validate: [{validator: Number.isInteger, msg: 'Integer expected'}],
   },
 });
+
+CategorySchema.set('toJSON', {getters: true});
 
 // Export model.
 module.exports = mongoose.model('Category', CategorySchema);

@@ -1,8 +1,11 @@
 /* eslint-disable require-jsdoc*/
-const TIME_LIMIT = 60;
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 15;
-const ALERT_THRESHOLD = 5;
+
+export const TIME_FRAME = {
+  timeLimit: 60,
+  warningThreshold: 15,
+  alertThreshold: 5,
+};
 
 const COLOR_CODES = {
   info: {
@@ -10,21 +13,21 @@ const COLOR_CODES = {
   },
   warning: {
     color: 'sandy-brown-text',
-    threshold: WARNING_THRESHOLD,
+    threshold: TIME_FRAME.warningThreshold,
   },
   alert: {
     color: 'red-text text-darken-1',
-    threshold: ALERT_THRESHOLD,
+    threshold: TIME_FRAME.alertThreshold,
   },
 };
 
-let timeLeft = TIME_LIMIT;
+let timeLeft = TIME_FRAME.timeLimit;
 let timerInterval = null;
 
 function onTimesUp() {
   clearInterval(timerInterval);
   timerInterval = null;
-  timeLeft = TIME_LIMIT;
+  timeLeft = TIME_FRAME.timeLimit;
   setCircleDasharray();
 }
 
@@ -33,14 +36,14 @@ function startTimer() {
     return;
   }
   let timePassed = 0;
-  timeLeft = TIME_LIMIT;
+  timeLeft = TIME_FRAME.timeLimit;
   $('#base-timer-path-remaining')
       .removeClass()
       .addClass(COLOR_CODES.info.color);
   $('#base-timer-label').text(formatTime(timeLeft));
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
+    timeLeft = TIME_FRAME.timeLimit - timePassed;
     $('#base-timer-label').text(formatTime(timeLeft));
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
@@ -76,8 +79,8 @@ function setRemainingPathColor(timeLeft) {
 }
 
 function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  const rawTimeFraction = timeLeft / TIME_FRAME.timeLimit;
+  return rawTimeFraction - (1 / TIME_FRAME.timeLimit) * (1 - rawTimeFraction);
 }
 
 function setCircleDasharray() {

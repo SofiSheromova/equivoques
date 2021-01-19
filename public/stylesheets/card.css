@@ -55,6 +55,10 @@
     word-break: break-word;
 }
 
+.content__standard-task::first-letter {
+    text-transform: uppercase;
+}
+
 .equivoques-card {
     display: flex;
     flex-direction: column;
