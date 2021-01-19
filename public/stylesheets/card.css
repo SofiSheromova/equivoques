@@ -1,0 +1,48 @@
+.game-card {
+    min-height: 20rem;
+    padding: 1rem;
+    background-color: #ffe0bf;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.standard-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.standard-task {
+    border-top: 1px dashed #4e4e4e;
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+    display: flex;
+    align-items: stretch;
+}
+
+.theme__task {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+}
+
+.category__standard-task {
+    width: 30%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.dice-img__standard-task {
+    width: 1.2rem;
+    vertical-align: center;
+    margin: 3px;
+}
+
+.content__standard-task {
+    flex-grow: 1;
+    text-align: center;
+    word-break: break-word;
+}

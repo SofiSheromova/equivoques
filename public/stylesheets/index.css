@@ -35,71 +35,26 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    align-content: space-evenly;
-    justify-content: space-around;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
 .dice-wrapper {
     position: relative;
     transform: scale(0.75);
-    margin: 3rem 5rem;
+    margin: 3rem 3rem;
 }
 
 .timer-wrapper {
     position: relative;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .card-wrapper {
-    width: 400px;
+    width: 30rem;
     /*min-height: 300px;*/
-    background-color: #ffd6aa;
-    border: 2px dashed #fe982a;
-    border-radius: 5%;
+    margin: 1rem;
     font-size: 1.25rem;
-}
-
-.standard-card {
-    min-height: 300px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    overflow: hidden;
-}
-
-.standard-task {
-    /*background-color: #00C853;*/
-    border-top: 1px dashed #fe982a;
-    display: flex;
-    align-items: stretch;
-
-}
-
-.theme__task {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.category__standard-task {
-    width: 30%;
-    /*background-color: #0D47A1;*/
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    font-size: 0.85rem;
-}
-
-.dice-img__standard-task {
-    width: 1.2rem;
-    vertical-align: center;
-    margin: 3px;
-}
-
-.content__standard-task {
-    flex-grow: 1;
-    text-align: center;
 }
 
 /* Extra small devices (phones, 600px and down) */

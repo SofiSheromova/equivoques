@@ -90,14 +90,14 @@ function setCircleDasharray() {
 $(document).ready(function() {
   $('.die-item').click(() => {
     onTimesUp();
-    $('.play-timer').show();
+    $('.play-timer-btn').show();
     $('#base-timer-path-remaining')
         .removeClass()
         .addClass(COLOR_CODES.info.color);
     $('#base-timer-label').text('');
   });
   $('.base-timer').click(() => {
-    $('.play-timer').hide();
+    $('.play-timer-btn').hide();
     startTimer();
   });
 });

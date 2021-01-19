@@ -1,7 +1,7 @@
 .base-timer {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 9rem;
+    height: 9rem;
 }
 
 .base-timer__svg {
@@ -30,8 +30,8 @@
 
 .base-timer__label {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 9rem;
+    height: 9rem;
     top: 0;
     display: flex;
     align-items: center;
@@ -39,9 +39,9 @@
     font-size: 1.5rem;
 }
 
-.play-timer {
+.play-timer-btn {
     position: absolute;
-    font-size: 70px;
+    font-size: 6rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
