@@ -234,7 +234,7 @@ function createCategories(cb) {
 }
 
 function createStandardTasks(cb) {
-  async.parallel([
+  async.series([
     function(callback) {
       taskCreate(
           themes['конкретно'],
