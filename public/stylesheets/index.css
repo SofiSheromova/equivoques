@@ -4,7 +4,7 @@
 }
 
 .content {
-    margin: 10px 50px;
+    margin: 0.75rem 4rem;
 }
 
 .standard-title {
@@ -52,46 +52,44 @@
 
 .card-wrapper {
     width: 30rem;
-    /*min-height: 300px;*/
+    min-height: 20rem;
     margin: 1rem;
     font-size: 1.25rem;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    /*.content {*/
-    /*    margin: 10px 50px;*/
-    /*}*/
+    .content {
+        margin: 0.75rem;
+    }
+
     .game-description {
         display: inline-block;
         font-size: 1rem;
     }
+
+    .card-wrapper {
+        margin: 1rem 0;
+    }
 }
 
-/*!* Small devices (portrait tablets and large phones, 600px and up) *!*/
-/*@media only screen and (min-width: 600px) {*/
-/*    .content {*/
-/*        margin: 10px 75px;*/
-/*    }*/
-/*}*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+        margin: 0.75rem 3rem;
+    }
+}
 
-/*!* Medium devices (landscape tablets, 768px and up) *!*/
-/*@media only screen and (min-width: 768px) {*/
-/*    .content {*/
-/*        margin: 20px 100px;*/
-/*    }*/
-/*}*/
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content {
+        margin: 0.75rem 8rem;
+    }
+}
 
-/*!* Large devices (laptops/desktops, 992px and up) *!*/
-/*@media only screen and (min-width: 992px) {*/
-/*    .content {*/
-/*        margin: 20px 125px;*/
-/*    }*/
-/*}*/
-
-/*!* Extra large devices (large laptops and desktops, 1200px and up) *!*/
-/*@media only screen and (min-width: 1200px) {*/
-/*    .content {*/
-/*        margin: 20px 150px;*/
-/*    }*/
-/*}*/
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content {
+        margin: 0.75rem 12rem;
+    }
+}

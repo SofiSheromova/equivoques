@@ -6,6 +6,14 @@
     overflow: hidden;
 }
 
+.card-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #727272;
+    font-size: 1.5rem;
+}
+
 .standard-card {
     display: flex;
     flex-direction: column;
@@ -21,7 +29,7 @@
     align-items: stretch;
 }
 
-.theme__task {
+.theme__game-card {
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 0.5rem;
@@ -45,4 +53,34 @@
     flex-grow: 1;
     text-align: center;
     word-break: break-word;
+}
+
+.equivoques-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.rules__equivoques-card {
+    font-size: 0.85rem;
+}
+
+.task-wrapper__equivoques-card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.equivoques-task {
+    white-space: pre-line;
+    text-align: center;
+}
+
+.standard-card {
+    display: none;
+}
+
+.equivoques-card {
+    display: none;
 }
