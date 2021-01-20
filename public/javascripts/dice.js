@@ -13,24 +13,33 @@ function getRandomNumber(min, max) {
 }
 
 $(document).ready(function() {
-  let diceClicked = false;
+  let diceRolled = false;
   $('.die-item').click(rollDice);
 
+  $(document).on('keyup', function(e) {
+    if (e.which === 32) {
+      rollDice();
+    }
+  });
+
   function rollDice() {
-    $('.error-place').css('display', 'none');
-    if (!diceClicked) {
-      diceClicked = true;
-      $('.die-item[data-side="1"]')
-          .empty()
-          .append($('<span class="dot"></span>'));
+    $('.error-place').hide();
+    if (!diceRolled) {
+      diceRolled = true;
+      removeDiceButton();
     }
     const diceValue = updateDiceValue();
-    console.log(diceValue);
-    if (diceValue === '6') {
-      requestCard(CardTypesUrl.equivoques, diceValue);
-    } else {
-      requestCard(CardTypesUrl.standard, diceValue);
-    }
+
+    requestCard(diceValue)
+        .then((card) => {
+          displayCard(card, diceValue);
+        });
+  }
+
+  function removeDiceButton() {
+    $('.die-item[data-side="1"]')
+        .empty()
+        .append($('<span class="dot"></span>'));
   }
 
   function updateDiceValue() {
@@ -42,8 +51,12 @@ $(document).ready(function() {
     return dice.attr('data-roll');
   }
 
-  function requestCard(url, diceValue) {
-    fetch(url)
+  function requestCard(diceValue) {
+    const url = diceValue === '6' ?
+        CardTypesUrl.equivoques :
+        CardTypesUrl.standard;
+
+    return fetch(url)
         .then((res) => res.json())
         .then((res) => {
           if (res.hasOwnProperty('error')) {
@@ -51,11 +64,8 @@ $(document).ready(function() {
           }
           return res;
         })
-        .then((res) => {
-          displayCard(res, diceValue);
-        })
         .catch((err) => {
-          $('.error-place').css('display', 'block');
+          $('.error-place').show();
           console.log('ERROR: ', err);
         });
   }
@@ -71,15 +81,16 @@ $(document).ready(function() {
 
   function displayStandardCard(card, number) {
     $('.standard-card').css('display', 'flex');
-    console.log(card);
     $(`.standard-card .theme__game-card`)
         .text(card[0].theme.title);
+
     for (let i = 1; i < 6; i++) {
       $(`.standard-task[data-point=${i}] .category-name__standard-task`)
           .text(card[i - 1].category.title);
       $(`.standard-task[data-point=${i}] .content__standard-task`)
           .text(card[i - 1].content);
     }
+
     TIME_FRAME.timeLimit = card[number - 1].category.duration;
   }
 
@@ -91,6 +102,7 @@ $(document).ready(function() {
         .text(card[0].category.specification);
     $(`.equivoques-card .equivoques-task`)
         .text(card[0].content);
+
     TIME_FRAME.timeLimit = card[0].category.duration;
   }
 });

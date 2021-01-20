@@ -59,6 +59,10 @@
     text-transform: uppercase;
 }
 
+.standard-card {
+    display: none;
+}
+
 .equivoques-card {
     display: flex;
     flex-direction: column;
@@ -79,10 +83,6 @@
 .equivoques-task {
     white-space: pre-line;
     text-align: center;
-}
-
-.standard-card {
-    display: none;
 }
 
 .equivoques-card {

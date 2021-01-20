@@ -7,18 +7,6 @@
     margin: 0.75rem 4rem;
 }
 
-.standard-title {
-    text-transform: uppercase;
-}
-
-.standard-description {
-    display: inline-block;
-}
-
-.standard-description::first-letter {
-    text-transform: lowercase;
-}
-
 #authorization-form {
     width: 100%;
     max-width: 450px;
@@ -27,7 +15,6 @@
 
 .game-description {
     display: inline-block;
-    font-size: 1.25rem;
     padding: 0 2rem;
 }
 
@@ -41,10 +28,8 @@
 
 .error-place {
     display: none;
-    padding: 2rem;
-    color: #d50000;
+    padding: 1rem;
     font-weight: bold;
-    font-size: 1.5rem;
 }
 
 .dice-wrapper {
@@ -73,11 +58,6 @@
 
     .game-description {
         display: inline-block;
-        font-size: 1rem;
-    }
-
-    .error-place {
-        font-size: 1rem;
     }
 
     .card-wrapper {
@@ -87,6 +67,10 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    * {
+        font-size: 1.25rem;
+    }
+
     .content {
         margin: 0.75rem 3rem;
     }
@@ -105,3 +89,15 @@
         margin: 0.75rem 12rem;
     }
 }
+
+/*.standard-title {*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+/*.standard-description {*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.standard-description::first-letter {*/
+/*    text-transform: lowercase;*/
+/*}*/
