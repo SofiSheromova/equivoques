@@ -14,6 +14,7 @@ const StandardCardSchema = new Schema({
 StandardCardSchema
     .virtual('theme')
     .get(function() {
+      // eslint-disable-next-line no-invalid-this
       return this.tasks[0].theme;
     });
 

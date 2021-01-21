@@ -23,12 +23,14 @@ const TaskSchema = new Schema({
 TaskSchema
     .virtual('ageRestrictions')
     .get(function() {
+      // eslint-disable-next-line no-invalid-this
       return this.theme.ageRestrictions;
     });
 
 TaskSchema
     .virtual('points')
     .get(function() {
+      // eslint-disable-next-line no-invalid-this
       return this.category.points;
     });
 
