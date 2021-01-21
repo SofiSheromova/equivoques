@@ -46,10 +46,6 @@ exports.rulesPage = function(req, res, next) {
   );
   Promise.all(tasks)
       .then((output) => Object.assign(...output))
-      .then((context) => {
-        console.log(context);
-        return context;
-      })
       .then((context) => res.render('rules', context))
       .catch((error) => next(error));
 };
