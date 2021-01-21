@@ -1,3 +1,11 @@
-<h1>{{message}}</h1>
-<h2>{{error.status}}</h2>
-<pre>{{error.stack}}</pre>
+{{#if error}}
+    <h1>{{message}}</h1>
+    <h2>{{error.status}}</h2>
+    <pre>{{error.stack}}</pre>
+{{else}}
+    <div class="server-error">
+        <h1 class="red-text text-accent-4">500</h1>
+        <h1>Произошла ошибка сервера :(</h1>
+        <h5>Повторите попытку позже</h5>
+    </div>
+{{/if}}
