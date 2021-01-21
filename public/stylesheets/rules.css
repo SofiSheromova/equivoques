@@ -1,0 +1,13 @@
+h6 {
+    font-size: 1.25rem;
+}
+
+.img-prompt {
+    display: block;
+    width: 90%;
+    max-width: 45rem;
+    border: 1px dashed #6bc4a6;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}

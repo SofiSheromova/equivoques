@@ -26,7 +26,7 @@
     justify-content: space-evenly;
 }
 
-.error-place {
+.error-placement {
     display: none;
     padding: 1rem;
     font-weight: bold;
@@ -46,7 +46,6 @@
 .card-wrapper {
     width: 30rem;
     min-height: 20rem;
-    margin: 1rem;
     font-size: 1.25rem;
 }
 
@@ -59,15 +58,11 @@
     .game-description {
         display: inline-block;
     }
-
-    .card-wrapper {
-        margin: 1rem 0;
-    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    * {
+    .game-description, .error-placement {
         font-size: 1.25rem;
     }
 

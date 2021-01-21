@@ -23,7 +23,7 @@ $(document).ready(function() {
   });
 
   function rollDice() {
-    $('.error-place').hide();
+    $('.error-placement').hide();
     if (!diceRolled) {
       diceRolled = true;
       removeDiceButton();
@@ -65,7 +65,7 @@ $(document).ready(function() {
           return res;
         })
         .catch((err) => {
-          $('.error-place').show();
+          $('.error-placement').show();
           console.log('ERROR: ', err);
         });
   }
