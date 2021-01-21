@@ -57,23 +57,108 @@
 <ul class="collapsible">
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_1</i>Задания на 1 балл</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-1-points}}
+                <ul class="category-1-points">
+                    {{#each category-1-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_2</i>Задания на 2 балла</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-2-points}}
+                <ul class="category-2-points">
+                    {{#each category-2-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_3</i>Задания на 3 балла</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-3-points}}
+                <ul class="category-3-points">
+                    {{#each category-3-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_4</i>Задания на 4 балла</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-4-points}}
+                <ul class="category-4-points">
+                    {{#each category-4-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_5</i>Задания на 5 баллов</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-5-points}}
+                <ul class="category-5-points">
+                    {{#each category-5-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
 </ul>
 <h5 class="sandy-brown-text text-darken-1">«Шесть» - значит «экивоки»</h5>
@@ -84,12 +169,29 @@
 <ul class="collapsible">
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_6</i>Задания «экивоки»</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if category-6-points}}
+                <ul class="category-6-points">
+                    {{#each category-6-points}}
+                        <li>
+                            <p class="category-title cadet-blue-text">
+                                {{this.title}}
+                            </p>
+                            <span class="category-specification">{{this.specification}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
 </ul>
 <h5 class="sandy-brown-text text-darken-1">Подсказки</h5>
 <p>Если задание вам уже встречалось, просто кидайте кубик ещё раз и берите следующую карточку.</p>
-<h6 class="cadet-blue-text text-lighten-1">Как быстрее угадать слово?</h6>
+<h6 class="cadet-blue-text">Как быстрее угадать слово?</h6>
 <p>
     Задайте направление: прежде чем объяснять слово, сообщите другим игрокам тему задания (она указана на всех
     карточках). Это поможет отгадать слово быстрее.
@@ -99,7 +201,7 @@
     Your browser does not support SVG
 </object>
 <p>Смело показывайте на пальцах или с помощью условных знаков, сколько слов содержит задание.</p>
-<h6 class="cadet-blue-text text-lighten-1">Не сдавайтесь!</h6>
+<h6 class="cadet-blue-text">Не сдавайтесь!</h6>
 <p>
     Не знаете слово или выражение? Выкручивайтесь! Делите слова на части, используйте похожие по звучанию,
     задействуйте ассистентов и предметы. Подключайте фантазию и артистизм, и все получится!
@@ -108,7 +210,24 @@
 <ul class="collapsible">
     <li>
         <div class="collapsible-header"><i class="material-icons">attach_file</i>Все темы</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-body">
+            {{#if themes}}
+                <ul class="themes">
+                    {{#each themes}}
+                        <li>
+                            <p class="theme-title cadet-blue-text">
+                                {{this.title}} ({{this.ageRestriction}}+)
+                            </p>
+                            <span class="theme-description">{{this.description}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="red-text text-accent-4">
+                    Не удалось получить требуемые данные. Попробуйте позже...
+                </p>
+            {{/if}}
+        </div>
     </li>
 </ul>
 <h5 class="sandy-brown-text text-darken-1">Оригинальная версия</h5>
@@ -117,3 +236,4 @@
     со всеми её бонусами, то переходите на <a href="https://www.ekivoki.ru/">сайт создателей</a> и заказывайте
     настольную версию игры «Экивоки».
 </p>
+<script type="text/javascript" src="/javascripts/rules.js"></script>

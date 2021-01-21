@@ -11,3 +11,23 @@ h6 {
     padding: 1rem;
     box-sizing: border-box;
 }
+
+.theme-title, .category-title {
+    text-transform: uppercase;
+}
+
+.theme-description, .category-specification {
+    display: inline-block;
+}
+
+.theme-description::first-letter, .category-specification::first-letter {
+    text-transform: lowercase;
+}
+
+.collapsible-body li {
+    padding-bottom: 1rem;
+}
+
+.collapsible-body li:last-child {
+    padding-bottom: 0;
+}
