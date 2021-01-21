@@ -3,12 +3,12 @@ const cardController = require('./card-controller');
 
 // Display list of all EquivoquesCards.
 exports.equivoquesCardList = function(req, res) {
-  res.send('NOT IMPLEMENTED: EquivoquesCard list');
+  cardController.cardList(EquivoquesCard, req, res);
 };
 
 // Display detail page for a specific EquivoquesCard.
 exports.equivoquesCardDetail = function(req, res) {
-  res.send('NOT IMPLEMENTED: EquivoquesCard detail: ' + req.params.id);
+  cardController.cardDetail(EquivoquesCard, req, res);
 };
 
 // Display EquivoquesCard create form on GET.

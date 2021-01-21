@@ -2,12 +2,24 @@ const Category = require('../models/category');
 
 // Display list of all Categories.
 exports.categoryList = function(req, res) {
-  res.send('NOT IMPLEMENTED: Category list');
+  Category.find({})
+      .then((categories) => {
+        res.json({categories});
+      })
+      .catch((error) => {
+        res.json({error});
+      });
 };
 
 // Display detail page for a specific Category.
 exports.categoryDetail = function(req, res) {
-  res.send('NOT IMPLEMENTED: Category detail: ' + req.params.id);
+  Category.findById(req.body.id)
+      .then((category) => {
+        res.json(category);
+      })
+      .catch((error) => {
+        res.json({error});
+      });
 };
 
 // Display Category create form on GET.
@@ -17,7 +29,19 @@ exports.categoryCreationForm = function(req, res) {
 
 // Handle Category create on POST.
 exports.categoryCreate = function(req, res) {
-  res.send('NOT IMPLEMENTED: Category create POST');
+  new Category({
+    title: req.body.title,
+    specification: req.body.specification,
+    duration: req.body.duration,
+    points: req.body.points,
+  })
+      .save((error, doc) => {
+        if (error) {
+          res.json({error});
+          return;
+        }
+        res.json(doc);
+      });
 };
 
 // Display Category delete form on GET.

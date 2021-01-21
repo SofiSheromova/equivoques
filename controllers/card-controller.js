@@ -3,13 +3,25 @@ const Theme = require('../models/theme');
 const Category = require('../models/category');
 
 // Display list of all Cards.
-exports.cardList = function(req, res) {
-  res.send('NOT IMPLEMENTED: Card list');
+exports.cardList = function(CardModel, req, res) {
+  CardModel.find({})
+      .then((themes) => {
+        res.json({themes});
+      })
+      .catch((error) => {
+        res.json({error});
+      });
 };
 
 // Display detail page for a specific Card.
-exports.cardDetail = function(req, res) {
-  res.send('NOT IMPLEMENTED: Card detail: ' + req.params.id);
+exports.cardDetail = function(CardModel, req, res) {
+  CardModel.findById(req.body.id)
+      .then((theme) => {
+        res.json(theme);
+      })
+      .catch((error) => {
+        res.json({error});
+      });
 };
 
 // Display Card create form on GET.

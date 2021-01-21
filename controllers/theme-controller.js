@@ -1,20 +1,25 @@
 const Theme = require('../models/theme');
 
 // Display list of all Themes.
-exports.themeList = function(req, res, next) {
-  Theme.find()
-      .exec(function(err, listThemes) {
-        if (err) {
-          return next(err);
-        }
-        // Successful, so render.
-        res.render('theme-list', {title: 'Theme List', themes: listThemes});
+exports.themeList = function(req, res) {
+  Theme.find({})
+      .then((themes) => {
+        res.json({themes});
+      })
+      .catch((error) => {
+        res.json({error});
       });
 };
 
 // Display detail page for a specific Theme.
 exports.themeDetail = function(req, res) {
-  res.send('NOT IMPLEMENTED: Theme detail: ' + req.params.id);
+  Theme.findById(req.body.id)
+      .then((theme) => {
+        res.json(theme);
+      })
+      .catch((error) => {
+        res.json({error});
+      });
 };
 
 // Display Theme create form on GET.
@@ -24,7 +29,18 @@ exports.themeCreationForm = function(req, res) {
 
 // Handle Theme create on POST.
 exports.themeCreate = function(req, res) {
-  res.send('NOT IMPLEMENTED: Theme create POST');
+  new Theme({
+    title: req.body.title,
+    description: req.body.description,
+    ageRestriction: req.body.ageRestriction,
+  })
+      .save((error, doc) => {
+        if (error) {
+          res.json({error});
+          return;
+        }
+        res.json(doc);
+      });
 };
 
 // Display Theme delete form on GET.

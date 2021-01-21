@@ -1,3 +1,6 @@
+const Theme = require('../models/theme');
+const Category = require('../models/category');
+
 exports.main = function(req, res, next) {
   res.render('index', {title: 'Экивоки'});
 };
@@ -21,7 +24,34 @@ exports.rulesPage = function(req, res, next) {
     res.redirect('/authorization?referer=/rules');
     return;
   }
-  res.render('rules', {title: 'Правила'});
+  const tasks = [1, 2, 3, 4, 5, 6].map((points) => {
+    return Category.find({points})
+        .then((categories) => {
+          const result = {};
+          result[`category-${points}-points`] = categories;
+          return result;
+        })
+        .catch((err) => {
+          return {};
+        });
+  });
+  tasks.push(
+      Theme.find({})
+          .then((themes) => {
+            return {themes};
+          })
+          .catch((err) => {
+            return {};
+          }),
+  );
+  Promise.all(tasks)
+      .then((output) => Object.assign(...output))
+      .then((context) => {
+        console.log(context);
+        return context;
+      })
+      .then((context) => res.render('rules', context))
+      .catch((error) => next(error));
 };
 
 exports.gamePage = function(req, res, next) {

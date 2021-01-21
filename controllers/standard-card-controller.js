@@ -3,12 +3,12 @@ const cardController = require('./card-controller');
 
 // Display list of all StandardCards.
 exports.standardCardList = function(req, res) {
-  res.send('NOT IMPLEMENTED: StandardCard list');
+  cardController.cardList(StandardCard, req, res);
 };
 
 // Display detail page for a specific StandardCard.
 exports.standardCardDetail = function(req, res) {
-  res.send('NOT IMPLEMENTED: StandardCard detail: ' + req.params.id);
+  cardController.cardDetail(StandardCard, req, res);
 };
 
 // Display StandardCard create form on GET.
