@@ -87,15 +87,28 @@ function calculateTimeFraction() {
 }
 
 $(document).ready(function() {
-  $('.die-item').click(() => {
-    initTimer();
-    $('.play-timer-btn').show();
-  });
-  $('.base-timer').click(() => {
+  const turnOnTimer = () => {
     if (!timerInterval) {
       $('.play-timer-btn').hide();
       initTimer();
       startTimer();
+    }
+  };
+  const resetTimer = () => {
+    initTimer();
+    $('.play-timer-btn').show();
+  };
+
+  $('.base-timer').click(turnOnTimer);
+  $('.die-item').click(resetTimer);
+
+  $(document).on('keyup', function(e) {
+    console.log(e.which);
+    if (e.which === 84) {
+      turnOnTimer();
+    }
+    if (e.which === 32) {
+      resetTimer();
     }
   });
 });
