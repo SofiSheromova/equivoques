@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    margin: 0.75rem 4rem;
+}
+
+.server-error {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#authorization-form {
+    width: 100%;
+    max-width: 450px;
+    margin: 25vh auto;
+}
+
+.game-description {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.error-placement {
+    display: none;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.dice-wrapper {
+    position: relative;
+    transform: scale(0.75);
+    margin: 3rem 3rem;
+}
+
+.timer-wrapper {
+    position: relative;
+    margin: 1rem;
+}
+
+.card-wrapper {
+    width: 30rem;
+    min-height: 20rem;
+    font-size: 1.25rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content {
+        margin: 0.75rem;
+    }
+
+    .game-description {
+        display: inline-block;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .game-description, .error-placement {
+        font-size: 1.25rem;
+    }
+
+    .content {
+        margin: 0.75rem 3rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content {
+        margin: 0.75rem 8rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content {
+        margin: 0.75rem 12rem;
+    }
+}
