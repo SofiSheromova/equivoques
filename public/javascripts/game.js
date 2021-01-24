@@ -65,6 +65,7 @@ $(document).ready(function() {
           return res;
         })
         .catch((err) => {
+          console.log(err);
           $('.error-placement').show();
         });
   }
