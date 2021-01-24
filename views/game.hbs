@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/stylesheets/dice.css">
+<link rel="stylesheet" href="/stylesheets/timer.css">
+<link rel="stylesheet" href="/stylesheets/card.css">
+
+<h4 class="sandy-brown-text text-darken-1 center">Игра началась!</h4>
+<ol class="game-description">
+    <li>Бросай кубик, чтобы получить карту</li>
+    <li>Запускай таймер</li>
+    <li>Объясняй слова своей команде</li>
+</ol>
+<div class="error-placement red-text text-accent-4">Произошла ошибка. Попробуйте повторить позже...</div>
+<div class="game-wrapper">
+    <div class="dice-wrapper">
+        {{> dice }}
+    </div>
+    <div class="timer-wrapper">
+        {{> timer }}
+    </div>
+    <div class="card-wrapper">
+        {{> card }}
+    </div>
+</div>
