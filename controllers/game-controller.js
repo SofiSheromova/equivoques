@@ -45,7 +45,7 @@ exports.rulesPage = function(req, res, next) {
           }),
   );
   Promise.all(tasks)
-      .then((output) => Object.assign(...output))
+      .then((output) => Object.assign(...output, {title: 'Правила'}))
       .then((context) => res.render('rules', context))
       .catch((error) => next(error));
 };
