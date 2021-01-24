@@ -1,7 +1,3 @@
-const Task = require('../models/task');
-const Theme = require('../models/theme');
-const Category = require('../models/category');
-
 // Display list of all Cards.
 exports.cardList = function(CardModel, req, res) {
   CardModel.find({})
@@ -15,9 +11,13 @@ exports.cardList = function(CardModel, req, res) {
 
 // Display detail page for a specific Card.
 exports.cardDetail = function(CardModel, req, res) {
-  CardModel.findById(req.body.id)
-      .then((theme) => {
-        res.json(theme);
+  CardModel.findById(req.params.id)
+      .populate({
+        path: 'tasks',
+        model: 'Task',
+      })
+      .then((card) => {
+        res.json(card);
       })
       .catch((error) => {
         res.json({error});
@@ -59,22 +59,17 @@ exports.cardRandom = function(CardModel, req, res) {
     if (err) {
       return res.status(500).json({error: err});
     }
-    const tasks = card.tasks.map((taskID) => {
-      return Task.findById(taskID)
-          .then((task) => {
-            return Promise.all([
-              Theme.findById(task.theme).exec(),
-              Category.findById(task.category).exec(),
-            ]).then(([theme, category]) => {
-              task.theme = theme;
-              task.category = category;
-              return task;
-            });
-          });
-    });
 
-    Promise.all(tasks)
-        .then((output) => res.status(200).json(output))
+    CardModel.findById(card._id)
+        .populate({
+          path: 'tasks',
+          model: 'Task',
+          populate: [
+            {path: 'theme'},
+            {path: 'category'},
+          ],
+        })
+        .then((output) => res.status(200).json(output.tasks))
         .catch((error) => res.status(500).json({error}));
   });
 };

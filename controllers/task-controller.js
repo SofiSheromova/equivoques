@@ -15,7 +15,9 @@ exports.taskList = function(req, res) {
 
 // Display detail page for a specific Task.
 exports.taskDetail = function(req, res) {
-  Task.findById(req.body.id)
+  Task.findById(req.params.id)
+      .populate('theme')
+      .populate('category')
       .then((task) => {
         res.json(task);
       })

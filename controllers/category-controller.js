@@ -13,7 +13,7 @@ exports.categoryList = function(req, res) {
 
 // Display detail page for a specific Category.
 exports.categoryDetail = function(req, res) {
-  Category.findById(req.body.id)
+  Category.findById(req.params.id)
       .then((category) => {
         res.json(category);
       })

@@ -13,7 +13,7 @@ exports.themeList = function(req, res) {
 
 // Display detail page for a specific Theme.
 exports.themeDetail = function(req, res) {
-  Theme.findById(req.body.id)
+  Theme.findById(req.params.id)
       .then((theme) => {
         res.json(theme);
       })

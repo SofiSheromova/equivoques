@@ -21,10 +21,10 @@ const TaskSchema = new Schema({
 });
 
 TaskSchema
-    .virtual('ageRestrictions')
+    .virtual('ageRestriction')
     .get(function() {
       // eslint-disable-next-line no-invalid-this
-      return this.theme.ageRestrictions;
+      return this.theme.ageRestriction;
     });
 
 TaskSchema
