@@ -55,7 +55,7 @@ exports.cardUpdate = function(req, res) {
 };
 
 exports.cardRandom = function(CardModel, req, res) {
-  CardModel.random(function(err, card) {
+  CardModel.random(req.cookies.userAge, function(err, card) {
     if (err) {
       return res.status(500).json({error: err});
     }
